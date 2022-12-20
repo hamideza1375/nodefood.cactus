@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= pageTitle  %> </title>
+</head>
+
+<body dir="rtl" style="width:93%;height:100vh;overflow: hidden;align-self: center;align-items: center; margin: 0 auto;">
+    
+<%if (qualification === 'ok') { %>
+    <div style="display: flex;flex-direction: column;
+      overflow: hidden;
+      height: 100vh;
+      width: 100%;
+      font-size: 14px;
+      align-self: center;
+     ">
+    
+      <p style="display: flex;flex-direction: column;
+      color: #0c0;
+       font-size: 27px;
+         font-weight: 900;
+          margin-top: 25px;
+           background-color: #fff;
+            padding:0 10;
+            width: 100%;
+            text-align: center;
+            border-radius: 4px;
+            ">پرداخت موفق</p>
+            
+        <div style="
+        box-shadow: 0px 0px 7px #0004;
+        display: flex;flex-direction: column;
+         margin-top: 25px;
+         align-self: center;
+           width: 100%;
+           max-width: 700px;
+             background-color: #fff;
+              border: 1px solid silver;
+                border-radius: 7px;
+                 padding: 15px 0 0;
+                  align-items: center;
+                   ">
+          <p style="display: flex;flex-direction: column;
+          font-size: 18px;
+           align-self: center;
+           text-align: center;
+           padding: 7px 8px 0;
+            color: #444;
+             ">سفارش شما با مشخصات زیر ثبت و تا دقایقی دیگر ارسال خواهد شد</p>
+            
+          
+          <div style="
+          display: flex;
+          flex-direction: column;
+          align-self: center;
+           border:1px solid silver;
+             width: 100%;
+             box-sizing:border-box;
+              margin:15px auto 0;
+               padding:0 15px;
+                padding-top: 15px;
+                 background-color: #f5f5f5;
+                  border-radius: 4px;
+                  ">
+    
+            <div style="display: flex;
+            border-bottom: 1px solid silver;          
+               width: 100%;
+                flex-direction: row;
+                 justify-content: space-between;
+                   ">
+                <p style="display: flex;flex-direction: column;
+                   font-weight: 500;
+                    
+                    ">نام: <%= fullname %> </p>
+              <div style="display: flex;justify-content: space-between;
+              flex-direction: row;
+               ">
+                <p style="display: flex;flex-direction: column;
+                font-weight: 500;
+                 
+                  ">شماره تلفن: <%= phone %> </p>
+              </div>
+            </div>
+    
+            <div style="display: flex;flex-direction: row;padding:8px 0 0;border-bottom: 1px solid silver; width: 100%;">
+                <p style="font-weight: 500;"> آدرس : <%= formattedAddress?.split(",")[0] + formattedAddress?.split(",")[1] %> </p>
+            </div>
+            <div style="
+            display: flex;flex-direction: column;
+            padding:8px 0 0;
+            border-bottom: 1px solid silver;
+               width: 100%;
+                flex-direction: row;
+                 justify-content: space-between;
+                   ">
+                <p style="display: flex;flex-direction: column;font-weight: 500 ">پلاک: <%= floor %></p>
+                <p style="display: flex;flex-direction: column;font-weight: 500 ">طبقه: <%= plaque %></p>
+            </div>
+         
+              <div style="
+              display: flex;flex-direction: column;
+              padding:8px 0 0;
+                 width: 100%;
+                  flex-direction: row;
+                   justify-content: space-between;
+                     ">
+                  <p id="price" style="display: flex;flex-direction: column;font-weight: 500 "><%= price %></p>
+                  <p id="createdAt" style="color:#999;display: flex;flex-direction: column;font-weight: 100 "></p>
+              </div>
+    
+    
+            </div>
+    
+        </div>    
+    
+    </Button>
+    <script src="https://unpkg.com/jalali-moment/dist/jalali-moment.browser.js"></script>
+    
+    <script>
+    
+    function spacePrice(inputPrice) {
+        try {
+          let rt = String(inputPrice)
+          let k = ''
+          for (let i = 0; i < rt.length; i++) {
+            k +=
+              rt.length == 4 ?
+                (i == 0 ?
+                  rt[i] + '.'
+                  :
+                  rt[i])
+                :
+                rt.length == 5 ?
+                  (i == 1 ?
+                    rt[i] + '.'
+                    :
+                    rt[i])
+                  :
+                  rt.length == 7 ?
+                    (i == 0 || i == 3
+                      ? rt[i] + '.'
+                      : rt[i])
+                    :
+                    rt.length == 8 ?
+                      (i == 1 || i == 4
+                        ? rt[i] + '.'
+                        : rt[i])
+                      :
+                      rt.length == 9 ?
+                        (i == 2 || i == 5
+                          ? rt[i] + '.'
+                          : rt[i])
+                        :
+                        rt.length == 10 ?
+                          (i == 0 || i == 3 || i == 6
+                            ? rt[i] + '.'
+                            : rt[i])
+                          :
+                          rt.length == 11 ?
+                            (i == 1 || i == 4 || i == 7
+                              ? rt[i] + '.'
+                              : rt[i])
+                            :
+                            i == 2
+                              ? rt[i] + '.'
+                              : rt[i]
+          }
+          return k
+        }
+        catch (err) { console.log(err) }
+      }
+    
+      document.getElementById('price').innerHTML = 'قیمت: ' + spacePrice(document.getElementById('price').innerHTML)
+      const jalaly = moment().locale('fa').format('hh:mm:ss YYYY/M/D')
+      document.getElementById('createdAt').innerHTML = jalaly
+    
+    </script>
+    </div>
+    
+    <% } else{ %>  
+      <div style="display: flex;flex-direction: column;width:100%;height:100%;padding-top:100px">
+      <h1 style="display: flex;flex-direction: column;color:red;margin:0 auto;text-align:center;">خطا پرداخت انجام نشد</h1>
+    <div>
+      <% } %>
+    
+    
+</body>
+
+</html>

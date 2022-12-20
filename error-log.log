@@ -1,0 +1,50 @@
+{"level":"error","message":"\"salllam\" is not a constructor"}
+{"level":"error","message":"\"salllam\" is not a constructor"}
+{"level":"error","message":"\"salllam\" is not a constructor"}
+{"level":"error","message":"allstar is a required field"}
+{"level":"error","message":"FoodModel is not defined"}
+{"level":"error","message":"FoodModel is not defined"}
+{"level":"error","message":"FoodModel is not defined"}
+{"level":"error","message":"FoodModel is not defined"}
+{"level":"error","message":"FoodModel is not defined"}
+{"level":"error","message":"FoodModel is not defined"}
+{"level":"error","message":"Cast to ObjectId failed for value \"id\" at path \"_id\" for model \"Proposal\""}
+{"level":"error","message":"Cast to ObjectId failed for value \"id\" at path \"_id\" for model \"Proposal\""}
+{"level":"error","message":"Cast to ObjectId failed for value \"63596e6b9beb9c0cc1b9110c,63596e6b9beb9c0cc1b9110c,63596e6b9beb9c0cc1b9110c,63596e6b9beb9c0cc1b9110c\" at path \"_id\" for model \"Proposal\""}
+{"level":"error","message":"i is not defined"}
+{"level":"error","message":"Unexpected token b in JSON at position 7"}
+{"level":"error","message":"ProposalModel is not defined"}
+{"level":"error","message":"ProposalModel is not defined"}
+{"level":"error","message":"ProposalModel is not defined"}
+{"level":"error","message":"ProposalModel is not defined"}
+{"level":"error","message":"Cannot read properties of undefined (reading '0')"}
+{"level":"error","message":"مساوی نیست"}
+{"level":"error","message":"listen EADDRINUSE: address already in use :::80"}
+{"level":"error","message":"listen EADDRINUSE: address already in use :::80"}
+{"level":"error","message":"user is not defined"}
+{"level":"error","message":"user is not defined"}
+{"level":"error","message":"`Model.findOne()` cannot run without a model as `this`. Make sure you are not calling `new Model.findOne()`"}
+{"level":"error","message":"Cannot read properties of null (reading 'uri')"}
+{"level":"error","message":"Cannot read properties of undefined (reading 'name')"}
+{"level":"error","message":"listen EADDRINUSE: address already in use :::80"}
+{"level":"error","message":"listen EADDRINUSE: address already in use :::80"}
+{"level":"error","message":"listen EADDRINUSE: address already in use :::80"}
+{"level":"error","message":"listen EADDRINUSE: address already in use :::80"}
+{"level":"error","message":"Admin2 is not defined"}
+{"level":"error","message":"Admin1 is not defined"}
+{"level":"error","message":"appa is not defined"}
+{"level":"error","message":"مساوی نیست"}
+{"level":"error","message":"Cannot set headers after they are sent to the client"}
+{"level":"error","message":"Cannot set headers after they are sent to the client"}
+{"level":"error","message":"Cannot set headers after they are sent to the client"}
+{"level":"error","message":"Cannot set headers after they are sent to the client"}
+{"level":"error","message":"Cannot set headers after they are sent to the client"}
+{"level":"error","message":"Cannot set headers after they are sent to the client"}
+{"level":"error","message":"Cannot read properties of undefined (reading 'set')"}
+{"level":"error","message":"Cannot read properties of undefined (reading 'set')"}
+{"level":"error","message":"mongoose.set(...).then is not a function"}
+{"level":"error","message":"options usefindandmodify, usecreateindex are not supported"}
+{"level":"error","message":"`strictQuery` is an invalid option."}
+{"level":"error","message":"listen EADDRINUSE: address already in use :::4000"}
+{"level":"error","message":"listen EADDRINUSE: address already in use :::4000"}
+{"level":"error","message":"listen EADDRINUSE: address already in use :::4000"}
