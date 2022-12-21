@@ -149,7 +149,7 @@ function FoodController() {
       if (!req.body.plaque) return res.status(385).send('err')
       const response = await zarinpal.PaymentRequest({
         Amount: req.query.allprice,
-        CallbackURL: 'http://192.168.216.240:4000/verifyPayment',
+        CallbackURL: 'http://192.168.24.240:4000/verifyPayment',
         Description: 'زستوران',
         Email: req.user.payload.email,
       });
@@ -165,15 +165,20 @@ function FoodController() {
         streetName: req.body.streetName,
         price: req.query.allprice,
         paymentCode: response.authority,
+        enablePayment:1,
         createdAt: new Date(),
       }).save();
 
+      if(req.user?.payload?.userId){
       const user = await UserModel.findById({ _id: req.user.payload.userId })
       for (let food of foods) {
+        if(user?.CommentPermission){
         let uc = user.CommentPermission.find((uc) => uc == food)
         if (!uc) { user.CommentPermission = user.CommentPermission.concat(food) }
-      }; await user.save()
-
+       }
+      }; 
+      if(user?.CommentPermission) await user.save()
+}
       res.status(200).json(response.url);
   }
 
@@ -203,6 +208,7 @@ function FoodController() {
           id: allAddress.length ? allAddress[allAddress.length - 1].id + 1 : 1,
           formattedAddress: payment.formattedAddress,
           streetName: payment.streetName,
+          enablePayment:payment.enablePayment
         }).save()
         // open(`http://localhost:3000/VerifyPayment?qualification=ok&&fullname=${payment.fullname}&&price=${payment.price}&&phone=${payment.phone}&&refId=${response.RefID}&&floor=${payment.floor}&&plaque=${payment.plaque}&&formattedAddress=${payment.formattedAddress}&&createdAt=${JSON.stringify(new Date)}`)
         // res.redirect(`http://localhost:3000/VerifyPayment?qualification=ok&&fullname=${payment.fullname}&&price=${payment.price}&&phone=${payment.phone}&&refId=${response.RefID}&&floor=${payment.floor}&&plaque=${payment.plaque}&&formattedAddress=${payment.formattedAddress}&&createdAt=${JSON.stringify(new Date)}`)

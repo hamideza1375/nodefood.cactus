@@ -29,6 +29,7 @@ router.delete('/deleteAllAddress', AuthAdmin, Admin.deleteAllAddress);
 
 router.get("/getproposal",AuthAdmin, Admin.getProposal);
 router.delete("/deleteMultiProposal",AuthAdmin, Admin.deleteMultiProposal);
+router.post("/senddisablePayment",AuthAdmin, Admin.senddisablePayment);
 
 module.exports = router
 

@@ -2,7 +2,7 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const UserModel = require('../model/UserModel');
 const ProposalModel = require('../model/proposalModel');
-const PaymentModel = require('../model/PaymentModel');
+const AddressModel = require('../model/AddressModel');
 
 const { RegisterVerifyCodeSchema, SendPhoneSchema, LoginSchama, ResetPasswordSchama, SendCodeSchema } = require('../validator/UserSchema');
 const captchapng = require("captchapng");
@@ -153,8 +153,8 @@ class UserController {
 
 
   async getLastPayment(req, res) {
-    const payment = await PaymentModel.findOne({ user: req.user.payload.userId }).sort({ createdAt: -1 });
-    res.send(payment)
+    const Address = await AddressModel.findOne({ user: req.user.payload.userId }).sort({ createdAt: -1 });
+    res.send(Address)
   }
 }
 

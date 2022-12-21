@@ -48,3 +48,29 @@
 {"level":"error","message":"listen EADDRINUSE: address already in use :::4000"}
 {"level":"error","message":"listen EADDRINUSE: address already in use :::4000"}
 {"level":"error","message":"listen EADDRINUSE: address already in use :::4000"}
+{"level":"error","message":"مساوی نیست"}
+{"level":"error","message":"Cannot read properties of null (reading 'save')"}
+{"level":"error","message":"Cannot read properties of null (reading 'save')"}
+{"level":"error","message":"Cannot read properties of null (reading 'CommentPermission')"}
+{"level":"error","message":"Cannot read properties of null (reading 'CommentPermission')"}
+{"level":"error","message":"Cannot read properties of null (reading 'save')"}
+{"level":"error","message":"Cannot read properties of null (reading 'save')"}
+{"level":"error","message":"AddressModel is not defined"}
+{"level":"error","message":"AddressModel is not defined"}
+{"level":"error","message":"AddressModel is not defined"}
+{"level":"error","message":"Cannot read properties of undefined (reading 'payload')"}
+{"level":"error","message":"Cannot read properties of undefined (reading 'payload')"}
+{"level":"error","message":"Cannot read properties of null (reading 'CommentPermission')"}
+{"level":"error","message":"Cannot read properties of null (reading 'CommentPermission')"}
+{"level":"error","message":"Cannot read properties of null (reading 'CommentPermission')"}
+{"level":"error","message":"Cannot read properties of null (reading 'CommentPermission')"}
+{"level":"error","message":"Cannot read properties of null (reading 'save')"}
+{"level":"error","message":"Cannot read properties of null (reading 'save')"}
+{"level":"error","message":"Cannot read properties of null (reading 'save')"}
+{"level":"error","message":"Cannot read properties of null (reading 'save')"}
+{"level":"error","message":"Cannot read properties of null (reading 'save')"}
+{"level":"error","message":"Cannot read properties of null (reading 'save')"}
+{"level":"error","message":"Cannot read properties of null (reading 'payload')"}
+{"level":"error","message":"Cannot read properties of null (reading 'payload')"}
+{"level":"error","message":"Cannot read properties of null (reading 'payload')"}
+{"level":"error","message":"Cannot read properties of null (reading 'payload')"}

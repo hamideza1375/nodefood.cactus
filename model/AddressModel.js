@@ -10,6 +10,7 @@ const Address = new mongoose.Schema({
   streetName:String,
   origin:Object,
   price:Number,
+  enablePayment:Number,
   id: { type: Number, default:1 },
   createdAt: { type: Date },
   user: { type: mongoose.Schema.Types.ObjectId, ref: "address" },
