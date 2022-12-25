@@ -74,3 +74,21 @@
 {"level":"error","message":"Cannot read properties of null (reading 'payload')"}
 {"level":"error","message":"Cannot read properties of null (reading 'payload')"}
 {"level":"error","message":"Cannot read properties of null (reading 'payload')"}
+{"level":"error"}
+{"level":"error"}
+{"level":"error"}
+{"level":"error"}
+{"level":"error"}
+{"level":"error"}
+{"level":"error","message":"Unexpected token y in JSON at position 0"}
+{"level":"error","message":"Unexpected token y in JSON at position 0"}
+{"level":"error","message":"Unexpected end of JSON input"}
+{"level":"error"}
+{"level":"error"}
+{"level":"error"}
+{"level":"error"}
+{"level":"error","message":"Cannot access 'user' before initialization"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: '[object Object]' }\" at path \"_id\" for model \"Food\""}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: '[object Object]' }\" at path \"_id\" for model \"Food\""}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: '[object Object]' }\" at path \"_id\" for model \"Food\""}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: '[object Object]' }\" at path \"_id\" for model \"Food\""}

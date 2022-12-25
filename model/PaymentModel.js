@@ -16,6 +16,7 @@ const Payment = new mongoose.Schema({
   streetName:String,
   origin:{type:Object},
   foods:{type:Array},
+  foodTitle:{type:Array},
   enablePayment:Number,
   success: { type: Boolean, default: false },
   createdAt: { type: Date, default: new Date() },

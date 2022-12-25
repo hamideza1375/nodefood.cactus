@@ -221,7 +221,7 @@ function AdminController() {
 
 
   this.senddisablePayment = async (req, res) => {
-    const Address = await AddressModel.findOne({ user: req.body.userId}).sort({ createdAt: -1 });
+    const Address = await AddressModel.findById(req.body._id);
     Address.enablePayment = 0
     Address.save()
   }

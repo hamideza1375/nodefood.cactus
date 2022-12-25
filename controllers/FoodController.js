@@ -110,7 +110,7 @@ function FoodController() {
       const { message, allstar } = req.body;
       if (!req.user?.payload) return res.status(400).send('err')
       const user = await UserModel.findById({ _id: req.user.payload.userId })
-      let uc = user && user.CommentPermission ? user.CommentPermission.find((uc) => uc === req.body.starId) : null
+      let uc = user.CommentPermission ? user.CommentPermission.find((uc) => uc === req.query.id) : null
 
       if (!uc && req.user.payload.isAdmin !== 'chief') return res.status(400).json('err')
 
@@ -130,7 +130,7 @@ function FoodController() {
       if (!req.user?.payload) return res.status(400).send('err')
 
       const user = await UserModel.findById({ _id: req.user.payload.userId })
-      let uc = user && user.CommentPermission ? user.CommentPermission.find((uc) => uc === req.body.userId) : null
+      let uc = user.CommentPermission ? user.CommentPermission.find((uc) => uc === req.query.id) : null
       if (!uc && req.user.payload.isAdmin !== 'chief') return res.status(400).json('err')
 
       const child = food.childFood.find((f) => f._id == req.query.id)
@@ -149,7 +149,7 @@ function FoodController() {
       if (!req.body.plaque) return res.status(385).send('err')
       const response = await zarinpal.PaymentRequest({
         Amount: req.query.allprice,
-        CallbackURL: 'http://192.168.24.240:4000/verifyPayment',
+        CallbackURL: 'http://localhost:4000/verifyPayment',
         Description: 'زستوران',
         Email: req.user.payload.email,
       });
@@ -164,6 +164,7 @@ function FoodController() {
         formattedAddress: req.body.formattedAddress,
         streetName: req.body.streetName,
         price: req.query.allprice,
+        foodTitle:req.body.allFoodTitle,
         paymentCode: response.authority,
         enablePayment:1,
         createdAt: new Date(),
@@ -204,6 +205,7 @@ function FoodController() {
           plaque: payment.plaque,
           origin: payment.origin,
           price: payment.price,
+          foodTitle:payment.foodTitle,
           createdAt: new Date(),
           id: allAddress.length ? allAddress[allAddress.length - 1].id + 1 : 1,
           formattedAddress: payment.formattedAddress,
@@ -223,6 +225,7 @@ function FoodController() {
           floor: payment.floor,
           plaque: payment.plaque,
           formattedAddress: payment.formattedAddress,
+          foodTitle:payment.foodTitle,
           createdAt: JSON.stringify(new Date),
         })
 
