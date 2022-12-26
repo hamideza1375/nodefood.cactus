@@ -166,6 +166,7 @@ function FoodController() {
         price: req.query.allprice,
         foodTitle:req.body.allFoodTitle,
         paymentCode: response.authority,
+        description: req.body.description,
         enablePayment:1,
         createdAt: new Date(),
       }).save();
@@ -210,6 +211,7 @@ function FoodController() {
           id: allAddress.length ? allAddress[allAddress.length - 1].id + 1 : 1,
           formattedAddress: payment.formattedAddress,
           streetName: payment.streetName,
+          description:payment.description,
           enablePayment:payment.enablePayment
         }).save()
         // open(`http://localhost:3000/VerifyPayment?qualification=ok&&fullname=${payment.fullname}&&price=${payment.price}&&phone=${payment.phone}&&refId=${response.RefID}&&floor=${payment.floor}&&plaque=${payment.plaque}&&formattedAddress=${payment.formattedAddress}&&createdAt=${JSON.stringify(new Date)}`)

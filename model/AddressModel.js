@@ -12,6 +12,7 @@ const Address = new mongoose.Schema({
   price:Number,
   enablePayment:Number,
   foodTitle:Array,
+  description:String,
   id: { type: Number, default:1 },
   createdAt: { type: Date },
   user: { type: mongoose.Schema.Types.ObjectId, ref: "address" },

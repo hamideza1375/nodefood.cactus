@@ -18,6 +18,7 @@ const Payment = new mongoose.Schema({
   foods:{type:Array},
   foodTitle:{type:Array},
   enablePayment:Number,
+  description:String,
   success: { type: Boolean, default: false },
   createdAt: { type: Date, default: new Date() },
   user: { type : mongoose.Schema.Types.ObjectId, ref : "user" },
