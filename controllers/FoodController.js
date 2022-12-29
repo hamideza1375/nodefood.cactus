@@ -149,7 +149,7 @@ function FoodController() {
       if (!req.body.plaque) return res.status(385).send('err')
       const response = await zarinpal.PaymentRequest({
         Amount: req.query.allprice,
-        CallbackURL: 'http://localhost:4000/verifyPayment',
+        CallbackURL: 'http://192.168.234.240:4000/verifyPayment',
         Description: 'زستوران',
         Email: req.user.payload.email,
       });
@@ -295,7 +295,11 @@ function FoodController() {
       fs.unlinkSync(`${appRoot}/public/upload/profile/${purl.uri}`)
 
       const uri = new Date().getTime() + req.user.payload.userId + `.${req.files.uri.mimetype.split('/')[1]}`
-      await sharp(image.data).toFile(`${appRoot}/public/upload/profile/${uri}`)
+      await sharp(image.data).toFile(`${appRoot}/public/upload/profile/${uri}`).jpeg({ quality: 80 })
+      // .resize({width: 150,height: 150})
+      // .extract({ width: 500, height: 330, left: 120, top: 70  })
+      // .extract({ width: 500, height: 330, left: 120, top: 70  })
+      // .toFormat("jpeg", { mozjpeg: true })
       await new imageProfile({ uri: uri, user: req.user.payload.userId }).save()
 
       const food = await FoodModel.find()

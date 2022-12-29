@@ -10,7 +10,7 @@ var CAPTCHA_NUM = null;
 const nodeCache = require("node-cache");
 const myCache = new nodeCache({ stdTTL: 120, checkperiod: 150 })
 var Kavenegar = require('kavenegar');
-var api = Kavenegar.KavenegarApi({ apikey: '6F39365A38764E6178634C794B3339655039706A6F4C425362707958716252414233316835514634754D453D' });
+var api = Kavenegar.KavenegarApi({ apikey: process.env.SECRET_KEY });
 
 
 
@@ -23,20 +23,20 @@ class UserController {
     let userPhone = await UserModel.findOne({ phone });
     if (userPhone) return res.status(398).json(" شماره از قبل موجود هست")
     const num = Math.floor(Math.random() * 90000 + 10000)
-    // myCache.set("code", num)
-    // api.Send({
-    //   message: `ارسال کد از رستوران 
-    //   Code: ${num}`,
-    //   sender: "2000500666",
-    //   receptor: req.body.phone,
-    // },
-    //   function (response, status) {
-    //     if (!status || !response) return res.status(400).json('err')
-    //     console.log('response',response)
-    //     res.status(status).json(response)
-    //   });
-
-    myCache.set("code", 12345)
+    myCache.set("code", num)
+    api.Send({
+      message: `ارسال کد از رستوران 
+      Code: ${num}`,
+      sender: "2000500666",
+      receptor: req.body.phone,
+    },
+      function (response, status) {
+        if (!status || !response) return res.status(400).json('err')
+        console.log('response',response)
+        res.status(status).json(response)
+      });
+     console.log(num)
+    // myCache.set("code", 12345)
     res.status(200).json('response')
   }
 
@@ -113,21 +113,21 @@ class UserController {
     if (!user) return res.status(400).send('شما قبلا ثبت نام نکردین')
     const num = Math.floor(Math.random() * 90000 + 10000)
     myCache.set("phone", req.body.phone)
-    // myCache.set("code", num)
-    // api.Send({
-    //   message: `ارسال کد از رستوران 
-    //   Code: ${num}`,
-    //   sender: "2000500666",
-    //   receptor: req.body.phone,
-    // },
-    //   function (response, status) {
-    //     if (!status || !response) return res.status(400).json('err')
-    //     console.log('response',response)
-    //     res.status(status).json(response)
-    //   });
-    // console.log(11, req.body.phone)
+    myCache.set("code", num)
+    api.Send({
+      message: `ارسال کد از رستوران 
+      Code: ${num}`,
+      sender: "2000500666",
+      receptor: req.body.phone,
+    },
+      function (response, status) {
+        if (!status || !response) return res.status(400).json('err')
+        console.log('response',response)
+        res.status(status).json(response)
+      });
+    console.log(11, num)
 
-    myCache.set("code", 12345)
+    // myCache.set("code", 12345)
     res.status(200).json('response')
   }
 

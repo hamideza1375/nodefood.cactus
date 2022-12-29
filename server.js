@@ -12,7 +12,6 @@ const ErrorMiddleware = require('./middleware/Error');
 const app = express();
 
 winston.add(new winston.transports.File({ filename: 'error-log.log' }));
-
 process.on('uncaughtException', (err) => {
   console.log(err);
   winston.error(err.message);

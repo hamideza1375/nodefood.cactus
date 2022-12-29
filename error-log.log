@@ -93,3 +93,5 @@
 {"level":"error","message":"Cast to ObjectId failed for value \"{ _id: '[object Object]' }\" at path \"_id\" for model \"Food\""}
 {"level":"error","message":"Cast to ObjectId failed for value \"{ _id: '[object Object]' }\" at path \"_id\" for model \"Food\""}
 {"level":"error","message":"مساوی نیست"}
+{"level":"error","message":"Cannot set headers after they are sent to the client"}
+{"level":"error","message":"Cannot set headers after they are sent to the client"}
