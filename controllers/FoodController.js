@@ -149,7 +149,7 @@ function FoodController() {
       if (!req.body.plaque) return res.status(385).send('err')
       const response = await zarinpal.PaymentRequest({
         Amount: req.query.allprice,
-        CallbackURL: 'http://192.168.234.240:4000/verifyPayment',
+        CallbackURL: 'http://localhost:4000/verifyPayment',
         Description: 'زستوران',
         Email: req.user.payload.email,
       });
