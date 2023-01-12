@@ -11,6 +11,8 @@ const ZarinpalCheckout = require('zarinpal-checkout');
 const zarinpal = ZarinpalCheckout.create('00000000-0000-0000-0000-000000000000', true);
 const { imageProfile } = require('../model/ImageProfile');
 const AddressModel = require('../model/AddressModel');
+const SendPriceModel = require('../model/SendPriceModel');
+
 let change = new Map();
 
 
@@ -335,6 +337,21 @@ function FoodController() {
       console.log(err);
     }
   }
+
+
+  this.getSendPrice = async (req, res) => {
+        const price = await SendPriceModel.findOne().sort({ createdAt: -1 })
+        res.status(200).json({sendPrice:price.sendPrice})
+  }
+
+
+  this.SendPrice = async (req, res) => {
+    const price = await SendPriceModel()
+    price.sendPrice = req.body.sendPrice
+    price.save()
+    res.status(200).json('good')
+}
+
 
 }
 

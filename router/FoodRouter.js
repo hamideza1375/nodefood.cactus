@@ -32,4 +32,8 @@ router.post('/imagechat', Food.imagechat);
 router.post('/sendprofile',Auth, Food.sendImageProfile);
 router.get('/getprofile',user, Food.getImageProfile);
 
+router.get('/getSendPrice', Food.getSendPrice);
+router.post('/SendPrice', Food.SendPrice);
+
+
 module.exports = router
